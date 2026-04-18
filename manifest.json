@@ -5,7 +5,7 @@
     "minNoctaliaVersion": "3.6.0",
     "author": "elrondforwin",
     "license": "MIT",
-    "repository": "https://github.com/elrond/noctalia-bubble-clock",
+    "repository": "https://github.com/elrond/noctalia-cookie-clock",
     "description": "An analog cookie-shaped clock desktop widget. Features a sine-wave cookie background, hour/minute/second hands, dial marks and date bubbless.",
     "entryPoints": {
         "desktopWidget": "DesktopWidget.qml",
