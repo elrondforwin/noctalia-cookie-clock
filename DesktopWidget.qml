@@ -44,20 +44,20 @@ DraggableDesktopWidget {
 
     // ---- Colors (from Noctalia theme) ----
     readonly property bool isDark: typeof Settings !== "undefined" && Settings.data && Settings.data.colorSchemes ? Settings.data.colorSchemes.darkMode : true
-    readonly property color colBackground: Color.mSurfaceVariant ? Color.mSurfaceVariant : "#605790"
-    readonly property color colOnBackground: Color.mOnSurfaceVariant ? Color.mOnSurfaceVariant : "#c9c5ce"
-    readonly property color colHourHand: Color.mPrimary ? Color.mPrimary : "#d0bcff"
-    readonly property color colMinuteHand: Color.mTertiary ? Color.mTertiary : "#efb8c8"
-    readonly property color colSecondHand: Color.mPrimary ? Color.mPrimary : "#d0bcff"
-    readonly property color colBackgroundInfo: Color.mOnSurfaceVariant ? Color.mOnSurfaceVariant : "#c9c5ce"
+    readonly property color colBackground: Color.mSurfaceVariant
+    readonly property color colOnBackground: Color.mOnSurfaceVariant
+    readonly property color colHourHand: Color.mPrimary
+    readonly property color colMinuteHand: Color.mTertiary
+    readonly property color colSecondHand: Color.mPrimary
+    readonly property color colBackgroundInfo: Color.mOnSurfaceVariant
     
     // Container colors
-    readonly property color colTertiaryContainer: Color.mTertiary ? Color.mTertiary : "#4a3b4e"
-    readonly property color colOnTertiaryContainer: Color.mOnTertiary ? Color.mOnTertiary : "#e6e0e9"
-    readonly property color colSecondaryContainer: Color.mSecondary ? Color.mSecondary : "#4a444e"
-    readonly property color colOnSecondaryContainer: Color.mOnSecondary ? Color.mOnSecondary : "#e6e0e9"
-    readonly property color colSurfaceContainerHighest: Color.mSurfaceVariant ? Color.mSurfaceVariant : "#49454f"
-    readonly property color colOnSurface: Color.mOnSurface ? Color.mOnSurface : "#e6e0e9"
+    readonly property color colTertiaryContainer: Color.mTertiary
+    readonly property color colOnTertiaryContainer: Color.mOnTertiary
+    readonly property color colSecondaryContainer: Color.mSecondary
+    readonly property color colOnSecondaryContainer: Color.mOnSecondary
+    readonly property color colSurfaceContainerHighest: Color.mSurfaceVariant
+    readonly property color colOnSurface: Color.mOnSurface
 
     // Transparent background - the cookie shape IS the background
     showBackground: false
@@ -201,7 +201,7 @@ DraggableDesktopWidget {
     component SineCookieShape: Item {
         id: sineCookie
         property real sides: 12
-        property color color: "#605790"
+        property color color: "#000000"
         property real amplitude: width / 50
         property int renderPoints: 360
 
@@ -404,7 +404,7 @@ DraggableDesktopWidget {
         required property int clockHour
         required property int clockMinute
         property string style: "fill"
-        property color color: "#d0bcff"
+        property color color: "#000000"
         property real widgetScale: 1.0
         property real handLength: Math.round(72 * widgetScale)
         property real handWidth: Math.round(20 * widgetScale)
@@ -437,7 +437,7 @@ DraggableDesktopWidget {
         id: minuteHand
         required property int clockMinute
         property string style: "medium"
-        property color color: "#efb8c8"
+        property color color: "#000000"
         property real widgetScale: 1.0
         property real handLength: Math.round(95 * widgetScale)
         property real handWidth: {
@@ -474,7 +474,7 @@ DraggableDesktopWidget {
         id: secondHand
         required property int clockSecond
         property string style: "dot"
-        property color color: "#d0bcff"
+        property color color: "#000000"
         property real widgetScale: 1.0
         property real dotSize: Math.round(20 * widgetScale)
         property real handLength: Math.round(95 * widgetScale)
