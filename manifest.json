@@ -23,7 +23,8 @@
             "secondHandStyle": "dot",
             "dateStyle": "bubble",
             "showSeconds": true,
-            "showHourMarks": false
+            "showHourMarks": false,
+            "backgroundOpacity": 1.0
         }
     }
 }

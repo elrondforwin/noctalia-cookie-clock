@@ -34,6 +34,8 @@
     "show-hour-marks-description": "Display an inner set of hour markings",
 
     "cookie-shape-label": "Cookie Shape Corners",
-    "cookie-shape-description": "Number of sine wave edges"
+    "cookie-shape-description": "Number of sine wave edges",
+    "background-opacity-label": "Background Opacity",
+    "background-opacity-description": "Adjust the transparency of the cookie shape"
   }
 }

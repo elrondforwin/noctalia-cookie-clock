@@ -34,6 +34,8 @@
     "show-hour-marks-description": "İç tarafta saat işaretlerini gösterir",
 
     "cookie-shape-label": "Kurabiye Şekli Köşeleri",
-    "cookie-shape-description": "Sinüs dalgası kenarlarının sayısı"
+    "cookie-shape-description": "Sinüs dalgası kenarlarının sayısı",
+    "background-opacity-label": "Arka Plan Opaklığı",
+    "background-opacity-description": "Kurabiye şeklinin şeffaflığını ayarlar"
   }
 }

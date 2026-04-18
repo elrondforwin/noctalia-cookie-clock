@@ -27,6 +27,8 @@ DraggableDesktopWidget {
         ? widgetData.showSeconds : (pluginApi?.manifest?.metadata?.defaultSettings?.showSeconds ?? true)
     readonly property bool showHourMarks: widgetData?.showHourMarks !== undefined
         ? widgetData.showHourMarks : (pluginApi?.manifest?.metadata?.defaultSettings?.showHourMarks ?? false)
+    readonly property real backgroundOpacity: widgetData?.backgroundOpacity !== undefined
+        ? widgetData.backgroundOpacity : (pluginApi?.manifest?.metadata?.defaultSettings?.backgroundOpacity ?? 1.0)
     readonly property real clockSize: 230
 
     // ---- Clock data ----
@@ -83,13 +85,15 @@ DraggableDesktopWidget {
             samples: 17
             color: Qt.rgba(0, 0, 0, 0.4)
             transparentBorder: true
+            visible: root.backgroundOpacity > 0
+            opacity: root.backgroundOpacity
         }
 
         // Sine-wave cookie shape background
         SineCookieShape {
             id: cookieShape
             anchors.fill: parent
-            visible: false // DropShadow renders it
+            visible: false
             sides: root.sides
             color: root.colBackground
         }

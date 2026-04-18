@@ -22,6 +22,7 @@ ColumnLayout {
     property string valueDateStyle: widgetSettings?.data?.dateStyle ?? pluginApi?.manifest?.metadata?.defaultSettings?.dateStyle ?? "bubble"
     property bool valueShowSeconds: widgetSettings?.data?.showSeconds ?? pluginApi?.manifest?.metadata?.defaultSettings?.showSeconds ?? true
     property bool valueShowHourMarks: widgetSettings?.data?.showHourMarks ?? pluginApi?.manifest?.metadata?.defaultSettings?.showHourMarks ?? false
+    property real valueBackgroundOpacity: widgetSettings?.data?.backgroundOpacity ?? pluginApi?.manifest?.metadata?.defaultSettings?.backgroundOpacity ?? 1.0
 
     NComboBox {
         Layout.fillWidth: true
@@ -126,6 +127,26 @@ ColumnLayout {
     }
 
     NValueSlider {
+        property real _value: root.valueBackgroundOpacity * 100
+        Layout.fillWidth: true
+        label: root.pluginApi?.tr("desktopWidgetSettings.background-opacity-label") ?? "Background Opacity"
+        description: root.pluginApi?.tr("desktopWidgetSettings.background-opacity-description") ?? "Adjust the transparency of the cookie shape"
+        value: _value
+        text: Math.round(_value) + "%"
+        from: 0
+        to: 100
+        stepSize: 1
+        defaultValue: 100
+        onMoved: value => _value = value
+        onPressedChanged: (pressed, value) => {
+            if (!pressed) { 
+                root.valueBackgroundOpacity = value / 100; 
+                root.saveSettings(); 
+            }
+        }
+    }
+
+    NValueSlider {
         property int _value: root.valueSides
         Layout.fillWidth: true
         label: root.pluginApi?.tr("desktopWidgetSettings.cookie-shape-label") ?? "Cookie Shape Corners"
@@ -159,6 +180,7 @@ ColumnLayout {
         data.dateStyle = root.valueDateStyle;
         data.showSeconds = root.valueShowSeconds;
         data.showHourMarks = root.valueShowHourMarks;
+        data.backgroundOpacity = root.valueBackgroundOpacity;
         
         widgetSettings.data = data;
         widgetSettings.save();
