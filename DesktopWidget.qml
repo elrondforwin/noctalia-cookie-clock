@@ -52,10 +52,10 @@ DraggableDesktopWidget {
     readonly property color colBackgroundInfo: Color.mOnSurfaceVariant ? Color.mOnSurfaceVariant : "#c9c5ce"
     
     // Container colors
-    readonly property color colTertiaryContainer: Color.mTertiary ? Qt.tint(Color.mSurface, Qt.rgba(Color.mTertiary.r, Color.mTertiary.g, Color.mTertiary.b, isDark ? 0.3 : 0.2)) : "#4a3b4e"
-    readonly property color colOnTertiaryContainer: Color.mOnSurface ? Color.mOnSurface : "#e6e0e9"
-    readonly property color colSecondaryContainer: Color.mSecondary ? Qt.tint(Color.mSurface, Qt.rgba(Color.mSecondary.r, Color.mSecondary.g, Color.mSecondary.b, isDark ? 0.3 : 0.2)) : "#4a444e"
-    readonly property color colOnSecondaryContainer: Color.mOnSurface ? Color.mOnSurface : "#e6e0e9"
+    readonly property color colTertiaryContainer: Color.mTertiary ? Color.mTertiary : "#4a3b4e"
+    readonly property color colOnTertiaryContainer: Color.mOnTertiary ? Color.mOnTertiary : "#e6e0e9"
+    readonly property color colSecondaryContainer: Color.mSecondary ? Color.mSecondary : "#4a444e"
+    readonly property color colOnSecondaryContainer: Color.mOnSecondary ? Color.mOnSecondary : "#e6e0e9"
     readonly property color colSurfaceContainerHighest: Color.mSurfaceVariant ? Color.mSurfaceVariant : "#49454f"
     readonly property color colOnSurface: Color.mOnSurface ? Color.mOnSurface : "#e6e0e9"
 
