@@ -8,7 +8,7 @@ import qs.Commons
 import qs.Modules.DesktopWidgets
 import qs.Widgets
 
-import "ColorHelper.js" as ColorHelper
+
 
 DraggableDesktopWidget {
     id: root
@@ -42,23 +42,22 @@ DraggableDesktopWidget {
     readonly property int clockMinute: sysClock.minutes
     readonly property int clockSecond: sysClock.seconds
 
-    // ---- Colors (from Noctalia theme and ColorHelper) ----
-    readonly property bool isDark: typeof Settings !== "undefined" && Settings.data && Settings.data.colorSchemes 
-                                  ? Settings.data.colorSchemes.darkMode : true
-    readonly property color colBackground: ColorHelper.generateContainerColor(Color.mSurface, isDark)
-    readonly property color colOnBackground: Color.mOnSurfaceVariant ?? "#c9c5ce"
-    readonly property color colHourHand: Color.mPrimary ?? "#d0bcff"
-    readonly property color colMinuteHand: Color.mTertiary ?? "#efb8c8"
-    readonly property color colSecondHand: Color.mPrimary ?? "#d0bcff"
-    readonly property color colBackgroundInfo: Color.mOnSurfaceVariant ?? "#c9c5ce"
+    // ---- Colors (from Noctalia theme) ----
+    readonly property bool isDark: typeof Settings !== "undefined" && Settings.data && Settings.data.colorSchemes ? Settings.data.colorSchemes.darkMode : true
+    readonly property color colBackground: Color.mSurfaceVariant ? Color.mSurfaceVariant : "#605790"
+    readonly property color colOnBackground: Color.mOnSurfaceVariant ? Color.mOnSurfaceVariant : "#c9c5ce"
+    readonly property color colHourHand: Color.mPrimary ? Color.mPrimary : "#d0bcff"
+    readonly property color colMinuteHand: Color.mTertiary ? Color.mTertiary : "#efb8c8"
+    readonly property color colSecondHand: Color.mPrimary ? Color.mPrimary : "#d0bcff"
+    readonly property color colBackgroundInfo: Color.mOnSurfaceVariant ? Color.mOnSurfaceVariant : "#c9c5ce"
     
     // Container colors
-    readonly property color colTertiaryContainer: ColorHelper.generateContainerColor(Color.mTertiary, isDark)
-    readonly property color colOnTertiaryContainer: ColorHelper.generateOnColor(colTertiaryContainer)
-    readonly property color colSecondaryContainer: ColorHelper.generateContainerColor(Color.mSecondary, isDark)
-    readonly property color colOnSecondaryContainer: ColorHelper.generateOnColor(colSecondaryContainer)
-    readonly property color colSurfaceContainerHighest: ColorHelper.generateContainerColor(Color.mSurfaceVariant, isDark)
-    readonly property color colOnSurface: Color.mOnSurface ?? "#e6e0e9"
+    readonly property color colTertiaryContainer: Color.mTertiary ? Qt.tint(Color.mSurface, Qt.rgba(Color.mTertiary.r, Color.mTertiary.g, Color.mTertiary.b, isDark ? 0.3 : 0.2)) : "#4a3b4e"
+    readonly property color colOnTertiaryContainer: Color.mOnSurface ? Color.mOnSurface : "#e6e0e9"
+    readonly property color colSecondaryContainer: Color.mSecondary ? Qt.tint(Color.mSurface, Qt.rgba(Color.mSecondary.r, Color.mSecondary.g, Color.mSecondary.b, isDark ? 0.3 : 0.2)) : "#4a444e"
+    readonly property color colOnSecondaryContainer: Color.mOnSurface ? Color.mOnSurface : "#e6e0e9"
+    readonly property color colSurfaceContainerHighest: Color.mSurfaceVariant ? Color.mSurfaceVariant : "#49454f"
+    readonly property color colOnSurface: Color.mOnSurface ? Color.mOnSurface : "#e6e0e9"
 
     // Transparent background - the cookie shape IS the background
     showBackground: false
